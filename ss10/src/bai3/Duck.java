@@ -1,0 +1,17 @@
+package bai3;
+
+public class Duck extends Animal implements Swimmable,Flyable{
+    public Duck(String name){
+        super(name);
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("duck Swim");
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("duck fly");
+    }
+}
