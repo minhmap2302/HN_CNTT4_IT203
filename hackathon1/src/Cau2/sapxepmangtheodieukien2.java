@@ -1,37 +1,33 @@
 package Cau2;
 
 import java.util.Scanner;
+import java.util.*;
 
 public class sapxepmangtheodieukien2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap so luong n:");
+        System.out.print("Nhap so phan tu: ");
         int n = sc.nextInt();
         int[] arr = new int[n];
-        for (int i = 0; i < n;i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
-        for(int i = 0; i < n -1;i++){
-            for(int j = i + 1;j < n;j++){
-                boolean needToChange = false;
-                if(arr[i] % 2 == 0 && arr[j] % 2 !=0){
-                    needToChange = true;
-                }else if(arr[i] % 2 != 0 && arr[j] % 2 == 0){
-                    if(arr[i] < arr[j]){
-                        needToChange = true;
-                    }
-                }
-                if(needToChange){
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
+        List<Integer> le = new ArrayList<>();
+        List<Integer> chan = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            if (arr[i] % 2 != 0) {
+                le.add(arr[i]);
+            } else {
+                chan.add(arr[i]);
             }
         }
-        System.out.print("Mang sau khi sap xep la:\n ");
-        for (int i = 0; i < n;i++){
-            System.out.println(arr[i]+" ");
+        le.sort(Collections.reverseOrder());
+        Collections.sort(chan);
+        for (int x : le) {
+            System.out.print(x + " ");
+        }
+        for (int x : chan) {
+            System.out.print(x + " ");
         }
     }
 }
