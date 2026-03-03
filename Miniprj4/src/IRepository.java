@@ -5,5 +5,5 @@ public interface IRepository<T> {
         boolean removeById(String id);
         T findById(String id);
         List<T> findAll();
-    }
 }
+
