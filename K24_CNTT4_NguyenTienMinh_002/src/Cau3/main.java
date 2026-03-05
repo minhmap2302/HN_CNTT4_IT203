@@ -25,7 +25,7 @@ public class main {
                 }
                 char top = stack.pop();
 
-                if ((ch == ')') && (ch == '(') || (ch == '}') && (ch == '{') || (ch == ']') && (ch == '[')){
+                if ((ch == ')') && (top != '(') || (ch == '}') && (top != '{') || (ch == ']') && (top != '[')){
                     System.out.println("Khong hop le");
                     return;
                 }
